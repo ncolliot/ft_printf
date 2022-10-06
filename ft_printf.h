@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 16:22:49 by ncolliot          #+#    #+#             */
-/*   Updated: 2022/10/06 16:16:56 by ncolliot         ###   ########.fr       */
+/*   Created: 2022/10/06 13:32:25 by ncolliot          #+#    #+#             */
+/*   Updated: 2022/10/06 16:16:28 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
+#ifndef FT_PRINTF_H
+#define FT_PRINTF_H
 
-int	ft_printf(const char *format, ...)
-{
-	int	flag;
-	int	len;
-	va_list	arg;
+#include <unistd.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdint.h>
 
-	flag = 0;
-	len = 0;
-	va_start(arg, format);
-	while (format[flag])
-	{
-		if ((format[flag] == '%') && (format[flag + 1] != '\0'))
-		{
-			len += ft_flag(arg, format[flag + 1]);
-			flag++;
-		}
-		else
-			len += ft_putchar(format[flag]);
-		flag++;
-	}
-	va_end(arg);
-	return(len);
-}
+int	ft_printf(const char *format, ...);
+int	ft_flag(va_list args, const char format);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr(int n);
+int	ft_putnbr_u(unsigned int n);
+
+#endif
