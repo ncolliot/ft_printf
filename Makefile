@@ -1,32 +1,36 @@
-NAME		=	libftprintf.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ncolliot <ncolliot@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/01 23:45:03 by ncolliot          #+#    #+#              #
+#    Updated: 2022/11/02 00:19:13 by ncolliot         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-INCLUDE		=	ft_printf.h
-
-SRCS		=	ft_printf.c \
-				helpers.c   \
-				ptr.c
-
-OBJS		=	$(SRCS:.c=.o)
-LIBC		=	ar rcs
-CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror
-RM			=	rm -f
+NAME = ft_printf.a
+SRCS = ft_flag.c ft_fonctions.c ft_hex.c ft_printf.c
+CC = gcc
+RM = rm -f
+CFLAGS = -Wall -Wextra -Werror
+OBJS = ${SRCS:.c=.o}
+COMP = gcc
+INCLUDE = ft_printf.c
 
 .c.o:
-			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INCLUDE)
+	${COMP} ${CFLAGS} -g -c $< -o ${<:.c=.o}
 
-$(NAME):	 $(OBJS) 
-			$(LIBC) $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-all:		$(NAME)
+all: ${NAME}
 
 clean:
-			$(RM) $(OBJS)
+	${RM} ${OBJS}
 
-fclean:		clean
-			$(RM) $(NAME)
+fclean: clean
+	${RM} ${NAME}
 
-re:			fclean all
-
-
-.PHONY:		all clean fclean norm re bonus
+re: fclean all
