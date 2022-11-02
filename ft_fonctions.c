@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fonctions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncolliot <ncolliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:35:23 by ncolliot          #+#    #+#             */
-/*   Updated: 2022/10/25 19:35:24 by ncolliot         ###   ########.fr       */
+/*   Updated: 2022/11/02 00:55:14 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft_42/libft.h"
 #include "ft_printf.h"
 
 int	ft_putchar(char c)

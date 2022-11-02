@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncolliot <ncolliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:22:49 by ncolliot          #+#    #+#             */
-/*   Updated: 2022/10/06 16:16:56 by ncolliot         ###   ########.fr       */
+/*   Updated: 2022/11/02 01:11:33 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
+#include "../libft_42/libft.h"
 
 int	ft_printf(const char *format, ...)
 {
-	int	flag;
-	int	len;
+	int		flag;
+	int		len;
 	va_list	arg;
 
 	flag = 0;
