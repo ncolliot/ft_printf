@@ -6,7 +6,7 @@
 /*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:35:23 by ncolliot          #+#    #+#             */
-/*   Updated: 2022/12/16 18:31:29 by ncolliot         ###   ########.fr       */
+/*   Updated: 2022/12/16 20:36:17 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,19 @@ int	ft_putnbr(long int nbr)
 	return (count_len(nbr, 10, a));
 }
 
-int	ft_putnbr_hex(unsigned long nbr, char bs)
+int	ft_putnbr_hex(unsigned long nbr, char c)
 {
 	if (nbr >= 16)
 	{
-		ft_putnbr_hex((nbr / 16), bs);
-		ft_putnbr_hex((nbr % 16), bs);
+		ft_putnbr_hex((nbr / 16), c);
+		ft_putnbr_hex((nbr % 16), c);
 	}
 	else
 	{
 		if (nbr < 10)
 			ft_putnbr(nbr);
 		else
-			ft_putchar(nbr - 10 + 'a' + bs - 'x');
+			ft_putchar(nbr - 10 + 'a' + c - 'x');
 	}
 	return (count_len(nbr, 16, 1));
 }
