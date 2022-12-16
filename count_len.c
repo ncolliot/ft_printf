@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   count_nbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolliot <ncolliot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 02:57:04 by ncolliot          #+#    #+#             */
-/*   Updated: 2022/11/02 02:58:39 by ncolliot         ###   ########.fr       */
+/*   Created: 2022/10/31 13:53:42 by hamaarou          #+#    #+#             */
+/*   Updated: 2022/12/16 18:30:46 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int main(void)
+int	count_len(unsigned long nbr, int bs, int sign)
 {
-    char text[] = "this si for the test";
-    int num = 3;
-    
+	int	count;
+
+	count = 0;
+	if (nbr == 0)
+		return (1);
+	while (nbr != 0)
+	{
+		nbr /= bs;
+		count++;
+	}
+	if (sign == -1)
+		count++;
+	return (count);
 }

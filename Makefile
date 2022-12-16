@@ -3,34 +3,36 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ncolliot <ncolliot@student.42.fr>          +#+  +:+       +#+         #
+#    By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 23:45:03 by ncolliot          #+#    #+#              #
-#    Updated: 2022/11/02 00:19:13 by ncolliot         ###   ########.fr        #
+#    Updated: 2022/12/16 16:14:25 by ncolliot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
-SRCS = ft_flag.c ft_fonctions.c ft_hex.c ft_printf.c
-CC = gcc
-RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
-OBJS = ${SRCS:.c=.o}
-COMP = gcc
-INCLUDE = ft_printf.c
+NAME = libftprintf.a
+CC = cc
+CFLAGS =-Wall -Wextra -Werror
 
-.c.o:
-	${COMP} ${CFLAGS} -g -c $< -o ${<:.c=.o}
+SRC= 	ft_flag.c ft_fonctions.c ft_printf.c ft_spec.c count_nbr.c
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
 
-all: ${NAME}
+OBJ= 	ft_flag.o ft_fonctions.o ft_printf.o ft_spec.o count_nbr.o
+
+.PHONY = all clean fclean re
+
+all:$(NAME)
+
+$(NAME):$(OBJ)
+	ar rc $(NAME) $(OBJ)
+
+$(OBJ):$(SRC)
+	$(CC) $(CFLAGS) -c $(SRC)
 
 clean:
-	${RM} ${OBJS}
+	rm -rf $(OBJ)
 
-fclean: clean
-	${RM} ${NAME}
+fclean:clean
+	rm -rf $(NAME)
 
-re: fclean all
+re:fclean all
