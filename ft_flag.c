@@ -6,7 +6,7 @@
 /*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:22:41 by ncolliot          #+#    #+#             */
-/*   Updated: 2022/12/16 18:28:34 by ncolliot         ###   ########.fr       */
+/*   Updated: 2023/01/05 15:31:16 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int	ft_flag(va_list args, const char format)
 		flag += ft_putnbr(va_arg(args, int));
 	else if (format == 'u') // print unisigned char
 		flag += ft_putnbr(va_arg(args, unsigned int));
-	else if (format == 'x')
+	else if (format == 'x') // print hexa
 		flag += ft_putnbr_hex(va_arg(args, unsigned int), 'x');
-	else if (format == 'X')
+	else if (format == 'X') // print hexa
 		flag += ft_putnbr_hex(va_arg(args, unsigned int), 'X');
-	else if (format == '%')
+	else if (format == '%') // print char '%'
 		flag += ft_putchar('%');
-	if (format == 'p')
+	if (format == 'p') // print pointers
 	{
 		flag += ft_putstr("0x");
 		flag += ft_putnbr_hex(va_arg(args, unsigned long), 'x');
