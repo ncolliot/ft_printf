@@ -6,7 +6,7 @@
 /*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:32:25 by ncolliot          #+#    #+#             */
-/*   Updated: 2022/12/16 18:31:17 by ncolliot         ###   ########.fr       */
+/*   Updated: 2023/02/02 18:07:10 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		ft_putnbr(long int n);
 int		ft_point(unsigned long ptr, int c);
 char	ft_hex(long int n, char c);
 int		count_len(unsigned long nbr, int bs, int sign);
-int		ft_putnbr_hex(unsigned long nbr, char bs);
+int     ft_putnbr_base(unsigned long long num, char *base);
+int		ft_hex_len(unsigned	int num);
 
 #endif

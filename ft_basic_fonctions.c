@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fonctions.c                                     :+:      :+:    :+:   */
+/*   ft_basic_fonctions.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:35:23 by ncolliot          #+#    #+#             */
-/*   Updated: 2022/12/16 20:36:17 by ncolliot         ###   ########.fr       */
+/*   Updated: 2023/02/02 18:07:33 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,21 +60,23 @@ int	ft_putnbr(long int nbr)
 	return (count_len(nbr, 10, a));
 }
 
-int	ft_putnbr_hex(unsigned long nbr, char c)
+int	ft_putnbr_base(unsigned long long num, char *base)
 {
-	if (nbr >= 16)
+	int		i;
+	int		len;
+
+	len = strlen(base);
+	i = 0;
+	if (num < 0)
 	{
-		ft_putnbr_hex((nbr / 16), c);
-		ft_putnbr_hex((nbr % 16), c);
+		ft_putchar('-');
+		num = -num;
 	}
-	else
-	{
-		if (nbr < 10)
-			ft_putnbr(nbr);
-		else
-			ft_putchar(nbr - 10 + 'a' + c - 'x');
-	}
-	return (count_len(nbr, 16, 1));
+	if (num >= (unsigned long long)len)
+		 i += ft_putnbr_base(num / len, base);
+	ft_putchar(base[(num % len)]);
+	i += 1;
+	return (i);
 }
 
 /*int	ft_putnbr_u(unsigned int n)
