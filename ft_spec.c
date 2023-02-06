@@ -6,7 +6,7 @@
 /*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:38:34 by ncolliot          #+#    #+#             */
-/*   Updated: 2023/01/09 13:12:44 by ncolliot         ###   ########.fr       */
+/*   Updated: 2023/02/03 13:08:05 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_point(unsigned long ptr, int c)
         c++;
     }
     if (ptr > 15)
-        len += ft_hex(ptr / 16, c);
+        len += ft_point(ptr / 16, c);
         len += ft_putchar(hex[ptr % 16]);
     return(len);
 }

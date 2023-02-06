@@ -6,7 +6,7 @@
 /*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:32:25 by ncolliot          #+#    #+#             */
-/*   Updated: 2023/02/02 18:07:10 by ncolliot         ###   ########.fr       */
+/*   Updated: 2023/02/05 22:06:33 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		ft_flag(va_list args, const char format);
 int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_putnbr(long int n);
-//int		ft_putnbr_u(unsigned int n);
 int		ft_point(unsigned long ptr, int c);
 char	ft_hex(long int n, char c);
 int		count_len(unsigned long nbr, int bs, int sign);

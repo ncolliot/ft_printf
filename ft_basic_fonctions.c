@@ -6,7 +6,7 @@
 /*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:35:23 by ncolliot          #+#    #+#             */
-/*   Updated: 2023/02/02 18:07:33 by ncolliot         ###   ########.fr       */
+/*   Updated: 2023/02/05 22:08:42 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	ft_putchar(char c)
 {
-    write(1, &c, 1);
-    return (1);
+	write(1, &c, 1);
+	return (1);
 }
 
 int	ft_putstr(char *str)
@@ -73,23 +73,8 @@ int	ft_putnbr_base(unsigned long long num, char *base)
 		num = -num;
 	}
 	if (num >= (unsigned long long)len)
-		 i += ft_putnbr_base(num / len, base);
+		i += ft_putnbr_base(num / len, base);
 	ft_putchar(base[(num % len)]);
 	i += 1;
 	return (i);
 }
-
-/*int	ft_putnbr_u(unsigned int n)
-{
-	int	len;
-
-	len = 0;
-	if (n >= 10)
-	{
-		len += ft_putnbr_u(n / 10);
-		len += ft_putchar(n % 10 + '0');
-	}
-	else
-		len += ft_putchar(n + '0');
-	return (len);
-}*/
