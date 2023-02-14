@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncolliot <ncolliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:22:41 by ncolliot          #+#    #+#             */
-/*   Updated: 2023/02/05 22:11:55 by ncolliot         ###   ########.fr       */
+/*   Updated: 2023/02/14 17:33:53 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,26 @@ int	ft_flag(va_list args, const char format)
 	int	flag;
 
 	flag = 0;
-	if (format == 'c')// print char
+	if (format == 'c')
 		flag += ft_putchar (va_arg(args, int));
-	else if (format == 's')// print strings
+	else if (format == 's')
 		flag += ft_putstr (va_arg(args, char *));
-	else if (format == 'd')// print decimal
+	else if (format == 'd')
 		flag += ft_putnbr (va_arg(args, int));
-	else if (format == 'i')// print int 
+	else if (format == 'i')
 		flag += ft_putnbr (va_arg(args, int));
-	else if (format == 'u')// print unisigned char
+	else if (format == 'u')
 		flag += ft_putnbr (va_arg(args, unsigned int));
-	else if (format == 'x')// print hexa
+	else if (format == 'x')
 		flag += ft_putnbr_base (va_arg(args, unsigned int), "0123456789abcdef");
-	else if (format == 'X')// print hexa
+	else if (format == 'X')
 		flag += ft_putnbr_base (va_arg(args, unsigned int), "0123456789ABCDEF");
-	else if (format == '%')// print char '%'
+	else if (format == '%')
 		flag += ft_putchar ('%');
-	if (format == 'p')// print pointers
+	if (format == 'p')
 	{
 		flag += ft_putstr ("0x");
-		flag += ft_putnbr_base (va_arg(args, unsigned long), "0123456789abcdef");
+		flag += ft_putnbr_base(va_arg(args, unsigned long), "0123456789abcdef");
 	}
 	return (flag);
 }

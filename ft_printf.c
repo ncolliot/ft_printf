@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncolliot <ncolliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:22:49 by ncolliot          #+#    #+#             */
-/*   Updated: 2022/12/16 14:35:32 by ncolliot         ###   ########.fr       */
+/*   Updated: 2023/02/14 17:34:51 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int	ft_printf(const char *format, ...)
 			len += ft_putchar(format[flag]);
 		flag++;
 	}
-	va_end(arg);
-	return(len);
+	va_end (arg);
+	return (len);
 }

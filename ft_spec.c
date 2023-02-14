@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_spec.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolliot <ncolliot@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncolliot <ncolliot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:38:34 by ncolliot          #+#    #+#             */
-/*   Updated: 2023/02/03 13:08:05 by ncolliot         ###   ########.fr       */
+/*   Updated: 2023/02/14 17:39:47 by ncolliot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 
 int	ft_point(unsigned long ptr, int c)
 {
-	int     len;
-    char    *hex;
+	int		len;
+	char	*hex;
 
-    hex = "0123456789abcdef";
-    len = 0;
-    if (!c)
-    {
-        len += write(1, "0x", 2);
-        c++;
-    }
-    if (ptr > 15)
-        len += ft_point(ptr / 16, c);
-        len += ft_putchar(hex[ptr % 16]);
-    return(len);
+	hex = "0123456789abcdef";
+	len = 0;
+	if (!c)
+	{
+		len += write(1, "0x", 2);
+		c++;
+	}
+	if (ptr > 15)
+		len += ft_point(ptr / 16, c);
+		len += ft_putchar(hex[ptr % 16]);
+	return (len);
 }
 
 char	ft_hex(long int n, char c)
